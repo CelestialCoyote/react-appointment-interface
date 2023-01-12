@@ -57,7 +57,7 @@ const AppointmentInterface = () => {
                 onSortByChange={mySort => setSortBy(mySort)}
             />
 
-            <ul className="">
+            <ul className='appointment-list'>
                 {filteredAppointments
                     .map(appointment => (
                         <AppointmentInfo key={appointment.id}

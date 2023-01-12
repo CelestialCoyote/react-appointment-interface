@@ -2,3 +2,11 @@
     background-color: pink;
     margin: 0.5em;
 }
+
+.appointment-interface ul {
+    list-style-type: none;
+}
+
+.appointment-list {
+    border: 1px solid brown;
+}

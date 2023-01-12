@@ -1,0 +1,9 @@
+.appointment-info {
+    border: 1px solid green;
+}
+
+.appointment-delete-button {
+    background-color: red;
+    height: 2.0rem;
+    width: 2.0rem;
+}
