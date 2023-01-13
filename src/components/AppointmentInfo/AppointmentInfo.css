@@ -1,9 +1,21 @@
 .appointment-info {
     border: 1px solid green;
+    margin: 0.5em;
 }
 
 .appointment-delete-button {
     background-color: red;
     height: 2.0rem;
     width: 2.0rem;
+}
+
+.appointment-info-group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.appointment-petname-date {
+    display: flex;
+    justify-items: center;
 }

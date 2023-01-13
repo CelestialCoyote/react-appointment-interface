@@ -12,8 +12,8 @@ const AppointmentInfo = ({ appointment, onDeleteAppointment }) => {
             >
                 <BiTrash />
             </button>
-            <div className="flex-grow">
-                <div className="flex items-center">
+            <div className='appointment-info-group'>
+                <div className="appointment-petname-date flex items-center">
                     <span className="flex-none font-medium text-2xl text-blue-500">{appointment.petName}</span>
                     <span className="flex-grow text-right">{appointment.aptDate}</span>
                 </div>
