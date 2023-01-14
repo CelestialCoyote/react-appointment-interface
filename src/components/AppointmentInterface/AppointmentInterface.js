@@ -19,15 +19,12 @@ const AppointmentInterface = () => {
                 item.petName.toLowerCase().includes(query.toLowerCase()) ||
                 item.ownerName.toLowerCase().includes(query.toLowerCase()) ||
                 item.aptNotes.toLowerCase().includes(query.toLowerCase())
-            )
+            );
         }
     ).sort((a, b) => {
         let order = (orderBy === 'asc') ? 1 : -1;
-        return (
-            a[sortBy].toLowerCase() < b[sortBy].toLowerCase()
-                ? -1 * order : 1 * order
-        )
-    })
+        return ( a[sortBy].toLowerCase() < b[sortBy].toLowerCase() ? -1 * order : 1 * order);
+    });
 
     const fetchData = useCallback(() => {
         fetch('./data/data.json')
@@ -35,7 +32,7 @@ const AppointmentInterface = () => {
             .then(data => {
                 setAppointmentList(data)
             });
-    }, [])
+    }, []);
 
     useEffect(() => {
         fetchData()
@@ -43,11 +40,14 @@ const AppointmentInterface = () => {
 
     return (
         <div className='appointment-interface'>
-            <h1 className=''>
-                <BiCalendar className="" />Your Appointments</h1>
+            <label className='appointment-interface-label'>
+                <BiCalendar className='appointment-interface-icon' />Your Appointments
+            </label>
             <AddAppointment
-                onSendAppointment={myAppointment => setAppointmentList([...appointmentList, myAppointment])}
-                lastId={appointmentList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}
+                onSendAppointment=
+                {myAppointment => setAppointmentList([...appointmentList, myAppointment])}
+                lastId=
+                {appointmentList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}
             />
             <Search query={query}
                 onQueryChange={myQuery => setQuery(myQuery)}
@@ -57,10 +57,11 @@ const AppointmentInterface = () => {
                 onSortByChange={mySort => setSortBy(mySort)}
             />
 
-            <ul className='appointment-list'>
+            <div className='appointment-list'>
                 {filteredAppointments
                     .map(appointment => (
-                        <AppointmentInfo key={appointment.id}
+                        <AppointmentInfo
+                            key={appointment.id}
                             appointment={appointment}
                             onDeleteAppointment={
                                 appointmentId =>
@@ -70,7 +71,7 @@ const AppointmentInterface = () => {
                         />
                     ))
                 }
-            </ul>
+            </div>
         </div>
     );
 };

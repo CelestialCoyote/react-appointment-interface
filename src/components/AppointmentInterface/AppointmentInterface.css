@@ -1,12 +1,20 @@
 .appointment-interface {
-    background-color: pink;
-    margin: 0.5em;
+    background-color: lightgray;
+    padding: 1.0em;
 }
 
-.appointment-interface ul {
-    list-style-type: none;
+.appointment-interface-label {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 3.0rem;
+    margin-bottom: 1.0em;
+}
+
+.appointment-interface-icon {
+    color: red;
 }
 
 .appointment-list {
-    border: 1px solid brown;
+    margin-top: 2.0em;
 }
